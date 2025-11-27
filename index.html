@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המדריך הקריקטורי למכס</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fff9c4; /* Light Yellow */
+            --panel-allowed: #c8e6c9; /* Light Green */
+            --panel-forbidden: #ffcdd2; /* Light Red */
+            --panel-info: #b3e5fc; /* Light Blue */
+            --panel-money: #fff59d; /* Yellow for money */
+            --border-color: #2c3e50;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 450px; /* Mobile width simulation */
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid var(--border-color);
+        }
+
+        header {
+            background-color: #4fc3f7;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--border-color);
+            position: relative;
+        }
+
+        h1 {
+            font-weight: 900;
+            font-size: 28px;
+            margin: 0;
+            text-shadow: 2px 2px 0px white;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .officer-img {
+            font-size: 60px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Comic Panel Style */
+        .panel {
+            margin: 15px;
+            padding: 15px;
+            border: 3px solid var(--border-color);
+            border-radius: 15px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .panel-title {
+            background-color: white;
+            border: 2px solid var(--border-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 900;
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 18px;
+        }
+
+        .grid-items {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .item {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .icon {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 5px;
+            filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+        }
+
+        .desc {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Specific Panel Colors */
+        .allowed { background-color: var(--panel-allowed); }
+        .forbidden { background-color: var(--panel-forbidden); }
+        .money { background-color: var(--panel-money); }
+        .tax { background-color: var(--panel-info); }
+
+        .limit-bubble {
+            background: white;
+            border: 2px solid var(--border-color);
+            padding: 10px;
+            border-radius: 50% 50% 50% 0;
+            font-weight: 900;
+            font-size: 20px;
+            display: inline-block;
+            margin: 10px;
+            transform: rotate(-5deg);
+        }
+
+        .warning-text {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+            font-size: 12px;
+            border-top: 4px solid var(--border-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 900;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 3px 3px 0px black;
+            margin-top: 10px;
+        }
+        
+        .btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px black;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="officer-img">👮‍♂️✈️</span>
+        <h1>ברוכים הבאים לישראל!</h1>
+        <div class="subtitle">המדריך המהיר למכס</div>
+    </header>
+
+    <div class="panel allowed">
+        <div class="panel-title">מה מותר? (מסלול ירוק) ✅</div>
+        <div class="grid-items">
+            <div class="item">
+                <span class="icon">👕</span>
+                <span class="desc">חפצים אישיים</span>
+            </div>
+            <div class="item">
+                <span class="icon">🍷</span>
+                <span class="desc">1 ל' משקה חריף<br><small>או 2 ל' יין</small></span>
+            </div>
+            <div class="item">
+                <span class="icon">🚬</span>
+                <span class="desc">200 סיגריות<br><small>(פאקט אחד)</small></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel tax">
+        <div class="panel-title">הכלל החשוב! 💡</div>
+        <div style="text-align: center; padding-top: 10px;">
+            <div class="limit-bubble">עד $200</div>
+            <div class="desc">מתנות ומוצרים חדשים פטורים ממס רק אם ערכם הכולל נמוך מ-200 דולר!</div>
+            <div style="font-size: 30px; margin-top: 10px;">💻📱🎁</div>
+        </div>
+    </div>
+
+    <div class="panel money">
+        <div class="panel-title">כסף מזומן 💵</div>
+        <div style="text-align: center; padding-top: 10px;">
+            <span class="icon">💼💰</span>
+            <div class="desc" style="font-size: 16px;">נכנסים עם יותר מ-50,000 ₪?</div>
+            <div class="warning-text" style="color: #d32f2f;">חובה לדווח לפקיד המכס!</div>
+            <small>(במעבר יבשתי: מעל 12,000 ₪)</small>
+        </div>
+    </div>
+
+    <div class="panel forbidden">
+        <div class="panel-title">מה אסור? ❌</div>
+        <div class="grid-items">
+            <div class="item">
+                <span class="icon">🌿</span>
+                <span class="desc">סמים<br>(מכל סוג)</span>
+            </div>
+            <div class="item">
+                <span class="icon">🔫</span>
+                <span class="desc">נשק<br>ותחמושת</span>
+            </div>
+            <div class="item">
+                <span class="icon">👜</span>
+                <span class="desc">חיקויים<br>ומותגים מזויפים</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>ט.ל.ח - המידע להמחשה בלבד</div>
+        <a href="https://www.gov.il/he/departments/topics/customs-baggage/govil-landing-page" class="btn">לאתר המכס הרשמי</a>
+    </footer>
+</div>
+
+</body>
+</html>
