@@ -1,3 +1,7 @@
+בטח, זה עדכון חשוב מאוד (במיוחד לאור השינויים האחרונים במיסוי).
+לפי הנחיות המכס, הפטור לסיגריות אלקטרוניות (נוזל מילוי או חד-פעמיות) הוא לרוב עד 250 מ"ל.
+עדכנתי את העיצוב של החלק העליון ("מה מותר") לטבלה של 2x2 כדי שהכל ייכנס בצורה ברורה ויפה בנייד.
+הנה הקוד המעודכן המלא:
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -9,11 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fff9c4; /* Light Yellow */
-            --panel-allowed: #c8e6c9; /* Light Green */
-            --panel-forbidden: #ffcdd2; /* Light Red */
-            --panel-info: #b3e5fc; /* Light Blue */
-            --panel-money: #fff59d; /* Yellow for money */
+            --bg-color: #fff9c4;
+            --panel-allowed: #c8e6c9;
+            --panel-forbidden: #ffcdd2;
+            --panel-info: #b3e5fc;
+            --panel-money: #fff59d;
             --border-color: #2c3e50;
             --text-color: #2c3e50;
         }
@@ -27,7 +31,7 @@
         }
 
         .container {
-            max-width: 450px; /* Mobile width simulation */
+            max-width: 450px;
             margin: 0 auto;
             background-color: white;
             border-radius: 20px;
@@ -41,7 +45,6 @@
             padding: 20px;
             text-align: center;
             border-bottom: 4px solid var(--border-color);
-            position: relative;
         }
 
         h1 {
@@ -67,11 +70,12 @@
         /* Comic Panel Style */
         .panel {
             margin: 15px;
-            padding: 15px;
+            padding: 20px 15px 15px 15px;
             border: 3px solid var(--border-color);
             border-radius: 15px;
             box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
             position: relative;
+            margin-top: 25px; /* Space for title */
         }
 
         .panel-title {
@@ -81,9 +85,19 @@
             border-radius: 20px;
             font-weight: 900;
             position: absolute;
-            top: -15px;
-            right: 20px;
+            top: -18px;
+            right: 15px;
             font-size: 18px;
+            z-index: 10;
+        }
+
+        /* 2x2 Grid Layout for Allowed Items */
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: center;
+            margin-top: 10px;
         }
 
         .grid-items {
@@ -94,12 +108,15 @@
         }
 
         .item {
-            flex: 1;
             padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
         }
 
         .icon {
-            font-size: 40px;
+            font-size: 35px;
             display: block;
             margin-bottom: 5px;
             filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
@@ -109,6 +126,13 @@
             font-size: 14px;
             font-weight: 700;
             line-height: 1.2;
+        }
+        
+        small {
+            font-weight: 400;
+            font-size: 12px;
+            display: block;
+            margin-top: 2px;
         }
 
         /* Specific Panel Colors */
@@ -167,32 +191,36 @@
 
 <div class="container">
     <header>
-        <span class="officer-img">👮‍♂️✈️</span>
-        <h1>ברוכים הבאים לישראל!</h1>
-        <div class="subtitle">המדריך המהיר למכס</div>
+        <span class="officer-img">👮‍♂️🛃</span>
+        <h1>ברוכים הבאים!</h1>
+        <div class="subtitle">המדריך המהיר למכס (לנייד)</div>
     </header>
 
     <div class="panel allowed">
-        <div class="panel-title">מה מותר? (מסלול ירוק) ✅</div>
-        <div class="grid-items">
+        <div class="panel-title">מה מותר? (ללא מס) ✅</div>
+        <div class="grid-2x2">
             <div class="item">
                 <span class="icon">👕</span>
-                <span class="desc">חפצים אישיים</span>
+                <span class="desc">חפצים אישיים<br><small>בגדים וכו'</small></span>
             </div>
             <div class="item">
                 <span class="icon">🍷</span>
-                <span class="desc">1 ל' משקה חריף<br><small>או 2 ל' יין</small></span>
+                <span class="desc">אלכוהול<br><small>1 ל' חריף / 2 ל' יין</small></span>
             </div>
             <div class="item">
                 <span class="icon">🚬</span>
-                <span class="desc">200 סיגריות<br><small>(פאקט אחד)</small></span>
+                <span class="desc">סיגריות<br><small>200 יחידות (פאקט)</small></span>
+            </div>
+            <div class="item">
+                <span class="icon">💨🔋</span>
+                <span class="desc">סיגריה אלקטרונית<br><small>נוזל עד 250 מ"ל</small></span>
             </div>
         </div>
     </div>
 
     <div class="panel tax">
         <div class="panel-title">הכלל החשוב! 💡</div>
-        <div style="text-align: center; padding-top: 10px;">
+        <div style="text-align: center;">
             <div class="limit-bubble">עד $200</div>
             <div class="desc">מתנות ומוצרים חדשים פטורים ממס רק אם ערכם הכולל נמוך מ-200 דולר!</div>
             <div style="font-size: 30px; margin-top: 10px;">💻📱🎁</div>
@@ -201,7 +229,7 @@
 
     <div class="panel money">
         <div class="panel-title">כסף מזומן 💵</div>
-        <div style="text-align: center; padding-top: 10px;">
+        <div style="text-align: center;">
             <span class="icon">💼💰</span>
             <div class="desc" style="font-size: 16px;">נכנסים עם יותר מ-50,000 ₪?</div>
             <div class="warning-text" style="color: #d32f2f;">חובה לדווח לפקיד המכס!</div>
@@ -214,24 +242,25 @@
         <div class="grid-items">
             <div class="item">
                 <span class="icon">🌿</span>
-                <span class="desc">סמים<br>(מכל סוג)</span>
+                <span class="desc">סמים</span>
             </div>
             <div class="item">
                 <span class="icon">🔫</span>
-                <span class="desc">נשק<br>ותחמושת</span>
+                <span class="desc">נשק</span>
             </div>
             <div class="item">
                 <span class="icon">👜</span>
-                <span class="desc">חיקויים<br>ומותגים מזויפים</span>
+                <span class="desc">זיופים</span>
             </div>
         </div>
     </div>
 
     <footer>
         <div>ט.ל.ח - המידע להמחשה בלבד</div>
-        <a href="https://www.gov.il/he/departments/topics/customs-baggage/govil-landing-page" class="btn">לאתר המכס הרשמי</a>
+        <a href="https://www.gov.il/BlobFolder/guide/customs-guide-for-returning-traveler/he/Guides_customs_Guides_customsreturningpassanger_new.pdf" class="btn">למדריך המלא</a>
     </footer>
 </div>
 
 </body>
 </html>
+
