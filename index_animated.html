@@ -953,7 +953,7 @@
             const data = modalData[type];
             if (!data) return;
 
-            document.getElementById('modalIcon').innerText = data.icon;
+            document.getElementById('modalIcon').innerHTML = data.icon;
             document.getElementById('modalTitle').innerText = data.title;
             document.getElementById('modalBody').innerHTML = data.body;
 
